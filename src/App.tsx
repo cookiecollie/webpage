@@ -1,20 +1,18 @@
 import { FaGithub, FaTwitch, FaTwitter } from "react-icons/fa"
 import { BrowserRouter } from "react-router-dom"
-import {
-    Footer,
-    NavItemObject,
-    Navbar,
-    SocialIconObject,
-} from "./components/composite"
+import { Footer, Navbar, SocialIconObject } from "./components/composite"
 import { Separator } from "./components/style"
+import { Commission, Gallery, Home, Links, RequestForm } from "./pages"
+import { CustomRoute } from "./routes"
+import { NavObjects } from "./utils/interfaces"
 
 function App() {
-    const navbarItems: NavItemObject[] = [
-        { itemKey: "", name: "Home" },
-        { itemKey: "gallery", name: "Gallery" },
-        { itemKey: "links", name: "Links" },
-        { itemKey: "commission", name: "Commission" },
-        { itemKey: "form", name: "Request Form" },
+    const navigationObjects: NavObjects[] = [
+        { itemKey: "", name: "Home", page: <Home /> },
+        { itemKey: "gallery", name: "Gallery", page: <Gallery /> },
+        { itemKey: "links", name: "Links", page: <Links /> },
+        { itemKey: "commission", name: "Commission", page: <Commission /> },
+        { itemKey: "form", name: "Request Form", page: <RequestForm /> },
     ]
 
     const footerSocials: SocialIconObject[] = [
@@ -43,7 +41,7 @@ function App() {
                         homeSection=""
                         endSection="End"
                         align="left"
-                        items={navbarItems}
+                        items={navigationObjects}
                     />
                 </div>
 
@@ -52,23 +50,7 @@ function App() {
                 </div>
 
                 <div className="flex min-h-max flex-1 justify-center py-10">
-                    {/* <Card variant="outlined" className="w-64">
-                        <Card.Header>
-                            <Typography as={"h5"} textAlign="center">
-                                Card Header
-                            </Typography>
-                        </Card.Header>
-
-                        <Card.Body>
-                            <Typography>Card Body</Typography>
-                            <Typography>Card Body</Typography>
-                        </Card.Body>
-
-                        <Card.Footer>
-                            <Typography>Card Footer</Typography>
-                        </Card.Footer>
-                    </Card> */}
-                    <div className="h-full" />
+                    <CustomRoute route={navigationObjects} />
                 </div>
 
                 <div className="flex px-5">

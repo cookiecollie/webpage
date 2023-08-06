@@ -1,8 +1,9 @@
 import { motion } from "framer-motion"
 import { NavLink, useLocation } from "react-router-dom"
+import { NavObjects } from "../../../utils/interfaces"
 
 interface NavbarProps {
-    items?: NavItemObject[]
+    items?: Pick<NavObjects, "itemKey" | "name">[]
     homeSection?: React.ReactNode
     endSection?: React.ReactNode
     align?: "left" | "center" | "right"
@@ -50,14 +51,10 @@ export const Navbar = (props: NavbarProps) => {
     )
 }
 
-interface NavbarItemProps {
-    name?: string
-    itemKey?: string
-}
-
-export interface NavItemObject extends NavbarItemProps {}
-
-const NavbarItem = ({ itemKey, name }: NavbarItemProps) => {
+const NavbarItem = ({
+    itemKey,
+    name,
+}: Pick<NavObjects, "itemKey" | "name">) => {
     const isActive = useLocation().pathname.replace(/\//g, "") === itemKey
 
     const itemVariant = {
