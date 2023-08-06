@@ -1,5 +1,15 @@
+import { Typography } from "./components/style"
+
 function App() {
-    return <></>
+    return (
+        <>
+            <div>
+                <Typography>Header</Typography>
+            </div>
+            <div>Body</div>
+            <div>Footer</div>
+        </>
+    )
 }
 
 export default App

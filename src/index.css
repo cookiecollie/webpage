@@ -1,3 +1,81 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    font-size: 16px;
+}
+
+body,
+html,
+#root {
+    height: 100% !important;
+}
+
+@layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @apply font-medium text-heading;
+    }
+
+    p {
+        @apply text-normal;
+    }
+
+    h1 {
+        @apply text-3xl;
+    }
+
+    h2 {
+        @apply text-2xl;
+    }
+
+    h3 {
+        @apply text-xl;
+    }
+
+    h4 {
+        @apply text-lg;
+    }
+
+    h5 {
+        @apply text-md;
+    }
+}
+
+@layer utilities {
+    .drop {
+        &-shadow {
+            &-level-0 {
+                @apply drop-shadow-none;
+            }
+
+            &-level-1 {
+                @apply drop-shadow-sm;
+            }
+
+            &-level-2 {
+                @apply drop-shadow;
+            }
+
+            &-level-3 {
+                @apply drop-shadow-md;
+            }
+
+            &-level-4 {
+                @apply drop-shadow-lg;
+            }
+
+            &-level-5 {
+                @apply drop-shadow-xl;
+            }
+
+            &-level-6 {
+                @apply drop-shadow-2xl;
+            }
+        }
+    }
+}
