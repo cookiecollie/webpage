@@ -3,13 +3,18 @@
 @tailwind utilities;
 
 html {
-    font-size: 16px;
+    /* font-size: 16px; */
+}
+
+:root {
+    height: 100dvh;
 }
 
 body,
 html,
 #root {
     height: 100% !important;
+    /* height: 100dvh !important */
 }
 
 @layer base {

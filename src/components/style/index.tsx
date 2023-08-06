@@ -1,3 +1,4 @@
+import { Separator } from "./Separator/Separator"
 import { Typography } from "./Typography/Typography"
 
-export { Typography }
+export { Separator, Typography }
