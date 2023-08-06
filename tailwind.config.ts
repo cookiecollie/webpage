@@ -68,6 +68,10 @@ export default {
                 "level-4": "",
                 "level-5": "",
             },
+
+            outlineColor: {
+                default: Font.color["border-default"],
+            },
         },
 
         fontFamily: {

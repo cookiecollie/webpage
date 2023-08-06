@@ -1,5 +1,5 @@
 import { PolyCompProp } from "./PolyComp/PolyComp"
-import { Surface } from "./Surface/Surface"
+import { Elevation, Surface } from "./Surface/Surface"
 
-export { Surface }
+export { Elevation, Surface }
 export type { PolyCompProp }
