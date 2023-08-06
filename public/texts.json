@@ -1,0 +1,282 @@
+{
+    "AboutWebsite": {
+        "items": [
+            "React with Typescript template",
+            "Chakra UI component library",
+            "react-icons for icons",
+            "Vercel for hosting"
+        ],
+
+        "references": [
+            {
+                "href": "https://create-react-app.dev/docs/adding-typescript/",
+                "title": "Create React App Installation - Typescript Template",
+                "key": "cra"
+            },
+
+            {
+                "href": "https://chakra-ui.com/docs/components",
+                "title": "Chakra UI Components Documentation",
+                "key": "chakra-ui-doc"
+            },
+
+            {
+                "href": "https://react-icons.github.io/react-icons/",
+                "title": "React Icons Main Page",
+                "key": "react-icons"
+            }
+        ]
+    },
+
+    "CommissionDetails": {
+        "details": [
+            "Please include your contacts (Discord, Twitter,...) when commissioning me.",
+
+            "A proper reference or visual representation of your character must be provided.",
+
+            "Please try to refrain from using a shaded reference for the commission. If you do not have a reference of any kind, the artwork depicting your character visually must not be heavily shaded. I am not responsible for wrong color usage due to heavily shaded references.",
+
+            "I only accept references in either PNG or JPEG format. Any references that do not conform to the format will be discarded.",
+
+            "A draft will be sent to you before the lining and coloring process. Please confirm the approval or request for any changes within 48 hours after the draft is sent.",
+
+            "After your approval, any requests for changes will be charged a fee.",
+
+            "You may ask for the progress of the commission, but please be reasonable about the frequency.",
+
+            "After I send you the completed artwork, please make sure to check for any errors and details before confirming the final approval. Keep in mind that any errors made by me (e.g. Forget to color a part, patterns on the wrong side, missing accessories,...) are not charged any fees."
+        ],
+
+        "paymentProcess": [
+            "I accept payments via either Ko-fi only. For half body and full body commissions, please wait for the finalized price given by me before proceeding with any payment.",
+
+            "Payment must be paid in full before I start working on the commission.",
+
+            "(For local Vietnamese only) Payments can be made via local bank transfer or e-wallets. Please contact me for the payment details and methods."
+        ],
+
+        "willDraw": ["SFW", "Furries", "Chibi-ish"],
+
+        "willNotDraw": [
+            "NSFW",
+            "Human",
+            "Realistic",
+            "Gore",
+            "Mechs",
+            "Fetishes",
+            "Muscles",
+            "Religions",
+            "Self-harm",
+            "Licensed character",
+            "Overly complex characters",
+            "Any hateful content towards anyone or community"
+        ]
+    },
+
+    "CustomAlert": {
+        "error": "There seems to be something wrong. Please try again later!",
+        "success": "Thank you for commissioning me! I will be in contact with you soon!"
+    },
+
+    "Extras": {
+        "background": ["Simple background: $0", "Detailed background: $5"],
+        "others": ["Edit request after approval: $5/request"]
+    },
+
+    "FormGuide": {
+        "guidelines": [
+            {
+                "field": "Email: ",
+                "content": "Your email. I will use this to reply if your form is accepted or not, and to send you the finished drawing."
+            },
+
+            {
+                "field": "Name: ",
+                "content": "What you want me to call you."
+            },
+
+            {
+                "field": "Commission type: ",
+                "content": "The type of commission you want. Please refer to the Commissions page for the price and description."
+            },
+
+            {
+                "field": "Reference sheet links: ",
+                "content": "The links to the reference sheets of your characters. Please provide at least one reference per character."
+            },
+
+            {
+                "field": "Secret commission?: ",
+                "content": "Mark your commission as a secret one or not. Secret commission will only be sent to you when it is finished."
+            },
+
+            {
+                "field": "Other means of contact: ",
+                "content": "Other places that I can contact you, e.g. Discord, Twitter,..."
+            },
+
+            {
+                "field": "Extra information: ",
+                "content": "Other things that you want to provide me about the commission, e.g. pose idea, background idea,... Or if you want to leave me a nice message, that is okay too!"
+            }
+        ]
+    },
+
+    "PriceSheet": {
+        "emotes": {
+            "description": [
+                "Simple shaded emotes",
+                "Finished emote will be 1024px x 1024px",
+                "Twitch resizable",
+                "Emote ideas must be provided beforehand"
+            ],
+
+            "price": "$10"
+        },
+
+        "halfBody": {
+            "description": [
+                "Fully shaded drawing",
+                "High-res drawing (at least 2048px x 2048px)"
+            ],
+
+            "price": "$25+"
+        },
+
+        "fullBody": {
+            "description": [
+                "Fully shaded drawing",
+                "High-res drawing (at least 2048px x 2048px)"
+            ],
+
+            "price": "$35+"
+        },
+
+        "refSheet": {
+            "description": [
+                "Basic reference sheet with back and front designs",
+                "Color palette included",
+                "No shading because of the nature of reference sheet",
+                "Character designs must be provided beforehand"
+            ],
+
+            "price": "$50"
+        },
+
+        "plushPhoneBG": {
+            "description": [
+                "Fully shaded drawing",
+                "High-res result, matches with the phone resolution",
+                "Phone resolution (width and height) must be provided beforehand, in pixels by pixels"
+            ],
+
+            "price": "$25"
+        }
+    },
+
+    "ImgLinks": {
+        "halfBody": [
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0195_JpHZt4X/xl_aIAnQxF.jpg",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0292_lkjLNY1/xl_hkwsko8.jpg",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0287_3YEZAkF/xl_HabgUpK.jpg"
+        ],
+
+        "fullBody": [
+            "https://itaku.ee/api/media/gallery_imgs/Photo_2023-07-17_06.51.09_PM_vU98tKM/xl_499XiDq.jpg",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0142_BzQ3cZL/xl_Eq7hMZN.jpg",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0173_MmvEkpB/xl_4bVoAm5.jpg"
+        ],
+
+        "emotes": [
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0310_pab9zYy/xl_0rG8nGx.png",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0304_gFKeap2/xl_iM8M7ZB.png",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0220_GmhsnCP/xl_23hAPVb.png",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0212_f3YuX8Q/xl_T7fYj0j.png",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0186_ap5wwvd/xl_ASrnJq2.png",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0180_gyoNQ0m/xl_Xa1B3ET.png",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0164_hFXXjtq/xl_KyyWuvX.png",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0138_COYv2uR/xl_R6oOM2w.png",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0117_xpwvodZ/xl_Y0lTPIg.png"
+        ],
+
+        "plushPhoneBG": [
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0277_RYFbZ25/xl_nXZCavs.jpg"
+        ],
+
+        "refSheet": [
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0311_Fflw9U8/xl_RAX5fwh.jpg",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0127_0rbgRo0/xl_6msebNa.jpg",
+            "https://itaku.ee/api/media/gallery_imgs/IMG_0213_NNdonUB/xl_tFMptS5.jpg"
+        ]
+    },
+
+    "TOS": {
+        "tos": [
+            "Details about commissions will be available on my Ko-fi. Please read them carefully before commissioning.",
+
+            "All of my finished artworks will be delivered exclusively in digital format, via either Discord, or email.",
+
+            "I do not have the right to reserve the finished commissions forever. It is the duty of the commissioner to save and reserve the artworks.",
+
+            "You may ask for changes, major or minor, to the WIPs/drafts I provided. Changes to the WIPs/drafts must be notified to me within 48 hours after the WIPs/drafts are sent. Changes such as species changes or stylistic edits are strictly not allowed. After 48 hours, any changes or requests for edits will be charged a fee.",
+
+            "For YCHs, requests for changes to the poses are not allowed.",
+
+            "I maintain the right to deny any commissions for any reason.",
+
+            "I maintain the right to cancel a commission at any time. A full refund will be issued to the commissioner.",
+
+            "All the rights regarding the artworks belong to me, including posting them on social media platforms, streaming the process, or using them for promotional purposes. Commissioners can ask for non-disclosure of the artwork if it is private.",
+
+            "No party other than myself is allowed to alter, trace, copy, or remove the watermark from the completed artworks.",
+
+            "No alteration to the finished artworks should be made without my approval.",
+
+            "You can ask for a refund before I begin to line the artwork. The amount of the refund shall be discussed depends on the progress of the sketch(es). After the start of the lining process, a refund is NOT viable under any circumstances.",
+
+            "No refund is possible once the artwork is completed.",
+
+            "The completion time for a commission may vary. Please keep in mind that I am still in university and having a job at the same time."
+        ],
+
+        "importants": [
+            "I am NOT consent to let my artworks be used for AI training purposes or be included in any AI datasets.",
+
+            "I am NOT consent to let my artworks be used for any NFT purposes.",
+
+            "I am NOT consent to let my artworks be used in AI related purposes in general, including completing or modifying sketches/raw sketches/incomplete artworks through AI.",
+
+            "You may ask for progress checks, but please be reasonable about the frequency. Attempting to push me or ask too frequently might result in your name appearing in the blacklist.",
+
+            "Please behave in a semi-professional or casual friendly manner when working with me. Poor behavior or harassment will result in termination of the commission and/or blacklisting."
+        ]
+    },
+
+    "AboutMe": {
+        "content": [
+            "Welcome to my page! My name is Cookie and I'm a part deer, part collie doggo who loves to draw. Other than that, I'm a part-time doggo on Twitch, too!",
+
+            "Feel free to navigate the site however you want! You can click on the links below to visit my Twitter and Twitch. If you want to know more about my commissions and arts, feel free to use the bar on the top!"
+        ]
+    },
+
+    "Commission": {
+        "content": [
+            "Commissions are open with unlimited slots until further notice.",
+
+            "Please refer through the TOS and the process carefully before commissioning me."
+        ]
+    },
+
+    "CommissionForm": {
+        "content": [
+            "Ready to have a drawing made by me? Go ahead and fill out the form below!",
+
+            "Be sure to read the TOS and my price sheet carefully before proceeding!",
+
+            "Click the button below to visit the Commissions page to take a look at my TOS and everything else if you haven't."
+        ]
+    },
+
+    "Gallery": {}
+}

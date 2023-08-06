@@ -1,5 +1,6 @@
 import { Card } from "./Card/Card"
-import { Navbar, NavItemObject } from "./Navbar/Navbar"
+import { Footer, SocialIconObject } from "./Footer/Footer"
+import { NavItemObject, Navbar } from "./Navbar/Navbar"
 
-export { Card, Navbar }
-export type { NavItemObject }
+export { Card, Footer, Navbar }
+export type { NavItemObject, SocialIconObject }

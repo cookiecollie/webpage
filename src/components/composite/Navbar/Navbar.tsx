@@ -71,10 +71,6 @@ const NavbarItem = ({ itemKey, name }: NavbarItemProps) => {
     }
 
     const indicatorVariant = {
-        hover: {
-            opacity: 1,
-        },
-
         active: {
             width: "100%",
             transition: {

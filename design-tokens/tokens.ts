@@ -170,6 +170,20 @@ export const Colors = {
         "12": "#141414",
         "13": "#000000",
     },
+
+    fill: {
+        default: "#00000026",
+        secondary: "#0000000f",
+        tertiary: "#0000000a",
+        quaternary: "#00000005",
+    },
+}
+
+export const ColorAlias = {
+    bg: {
+        container: Colors.neutral["1"],
+        layout: Colors.neutral["3"],
+    },
 }
 
 export const Font = {
@@ -194,8 +208,12 @@ export const Font = {
         heading: "#000000E0",
         normal: "#000000E0",
         secondary: "#000000A6",
+        tertiary: "#00000073",
+        quaternary: "#00000040",
         disabled: "#00000040",
-        "border-default": "#D9D9D9FF",
+
+        "border-default": Colors.neutral["5"],
+        "border-secondary": Colors.neutral["4"],
         separator: "#0505050F",
         "layout-bg": "#F5F5F5FF",
     },

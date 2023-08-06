@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss"
 
-import { Colors, Font } from "./design-tokens/tokens"
+import { ColorAlias, Colors, Font } from "./design-tokens/tokens"
 
 export default {
     content: ["./index.html", "./src/**/*.{html,ts,tsx}", "./src/*.{ts,tsx}"],
@@ -57,6 +57,14 @@ export default {
 
                 neutral: {
                     ...Colors.neutral,
+                },
+
+                bg: {
+                    ...ColorAlias.bg,
+                },
+
+                fill: {
+                    ...Colors.fill,
                 },
             },
 

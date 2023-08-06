@@ -18,16 +18,16 @@ html,
 }
 
 @layer base {
+    html {
+        @apply text-normal;
+    }
+
     h1,
     h2,
     h3,
     h4,
     h5 {
-        @apply font-medium text-heading;
-    }
-
-    p {
-        @apply text-normal;
+        @apply text-heading;
     }
 
     h1 {

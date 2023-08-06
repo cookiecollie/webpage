@@ -1,5 +1,11 @@
+import { FaGithub, FaTwitch, FaTwitter } from "react-icons/fa"
 import { BrowserRouter } from "react-router-dom"
-import { NavItemObject, Navbar } from "./components/composite"
+import {
+    Footer,
+    NavItemObject,
+    Navbar,
+    SocialIconObject,
+} from "./components/composite"
 import { Separator } from "./components/style"
 
 function App() {
@@ -9,6 +15,24 @@ function App() {
         { itemKey: "links", name: "Links" },
         { itemKey: "commission", name: "Commission" },
         { itemKey: "form", name: "Request Form" },
+    ]
+
+    const footerSocials: SocialIconObject[] = [
+        {
+            itemKey: "twitter",
+            icon: <FaTwitter />,
+            href: "https://twitter.com/CookieCollie",
+        },
+        {
+            itemKey: "twitch",
+            icon: <FaTwitch />,
+            href: "https://www.twitch.tv/cookiecollie",
+        },
+        {
+            itemKey: "github",
+            icon: <FaGithub />,
+            href: "https://github.com/cookiecollie",
+        },
     ]
 
     return (
@@ -27,7 +51,7 @@ function App() {
                     <Separator />
                 </div>
 
-                <div className="flex flex-1 justify-center py-10">
+                <div className="flex min-h-max flex-1 justify-center py-10">
                     {/* <Card variant="outlined" className="w-64">
                         <Card.Header>
                             <Typography as={"h5"} textAlign="center">
@@ -44,9 +68,16 @@ function App() {
                             <Typography>Card Footer</Typography>
                         </Card.Footer>
                     </Card> */}
+                    <div className="h-full" />
                 </div>
 
-                <div className="flex">Footer</div>
+                <div className="flex px-5">
+                    <Separator />
+                </div>
+
+                <div className="flex min-h-max">
+                    <Footer socialsItems={footerSocials} />
+                </div>
             </div>
         </BrowserRouter>
     )
