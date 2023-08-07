@@ -88,28 +88,28 @@ const NavbarItem = ({
     }
 
     return (
-        <motion.div
-            whileHover={"hover"}
-            whileTap={"click"}
-            className="relative flex flex-col justify-center"
-        >
-            <motion.div variants={itemVariant}>
-                <NavLink to={`/${itemKey}`}>{name}</NavLink>
-            </motion.div>
-
+        <NavLink to={`/${itemKey}`} className={"block"}>
             <motion.div
-                className="absolute bottom-0 flex h-0.5 w-full justify-center"
-                animate={isActive ? "active" : "inactive"}
+                whileHover={"hover"}
+                whileTap={"click"}
+                className="relative flex h-full items-center"
             >
+                <motion.p variants={itemVariant}>{name}</motion.p>
+
                 <motion.div
-                    className="rounded-s-full bg-blue-5"
-                    variants={indicatorVariant}
-                />
-                <motion.div
-                    className="rounded-e-full bg-blue-5"
-                    variants={indicatorVariant}
-                />
+                    className="absolute bottom-0 flex h-0.5 w-full justify-center"
+                    animate={isActive ? "active" : "inactive"}
+                >
+                    <motion.div
+                        className="rounded-s-full bg-blue-5"
+                        variants={indicatorVariant}
+                    />
+                    <motion.div
+                        className="rounded-e-full bg-blue-5"
+                        variants={indicatorVariant}
+                    />
+                </motion.div>
             </motion.div>
-        </motion.div>
+        </NavLink>
     )
 }
