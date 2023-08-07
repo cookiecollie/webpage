@@ -3,10 +3,16 @@ import { Elevation, Surface } from "../../primtives"
 interface CardProps {
     variant?: "outlined" | "elevated" | "filled"
     className?: string
+    orientation?: "horizontal" | "vertical"
 }
 
 export const Card = (props: React.PropsWithChildren<CardProps>) => {
-    const { children, variant = "elevated", className } = props
+    const {
+        children,
+        variant = "elevated",
+        className,
+        orientation = "horizontal",
+    } = props
     return (
         <Surface
             elevation={
@@ -16,7 +22,13 @@ export const Card = (props: React.PropsWithChildren<CardProps>) => {
                 variant === "outlined" ? "outline outline-default" : ""
             } ${className} rounded-md`}
         >
-            {children}
+            <div
+                className={`flex h-full w-full ${
+                    orientation === "horizontal" ? "flex-row" : "flex-col"
+                }`}
+            >
+                {children}
+            </div>
         </Surface>
     )
 }

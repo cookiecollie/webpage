@@ -2,13 +2,13 @@ import { PolyCompProp } from "../../primtives"
 
 interface TypoProps {
     textAlign?: "left" | "right" | "center" | "justify" | "start" | "end"
-    classname?: string
+    className?: string
 }
 
 export const Typography = <Comp extends React.ElementType>(
     props: PolyCompProp<Comp, TypoProps>
 ) => {
-    const { as, children, variant, textAlign = "left", classname } = props
+    const { as, children, textAlign = "left", className = "" } = props
     const Component = as || "p"
 
     const alignment =
@@ -25,10 +25,7 @@ export const Typography = <Comp extends React.ElementType>(
             : "text-justify"
 
     return (
-        <Component
-            {...props}
-            className={`${variant} ${alignment} ${classname}`}
-        >
+        <Component {...props} className={`${alignment} ${className}`}>
             {children}
         </Component>
     )

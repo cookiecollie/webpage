@@ -16,7 +16,7 @@ export const Footer = ({ socialsItems }: FooterProps) => {
     return (
         <div className="flex h-32 w-full items-center justify-between px-20 text-quaternary">
             <div>
-                <Typography classname="text-sm">
+                <Typography className="text-sm">
                     © 2023 CookieCollie. All rights reserved.
                 </Typography>
             </div>

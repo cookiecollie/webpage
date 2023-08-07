@@ -252,7 +252,8 @@
         ]
     },
 
-    "AboutMe": {
+    "Home": {
+        "heading": "Hi there! I'm Cookie, nice to meet ya!",
         "content": [
             "Welcome to my page! My name is Cookie and I'm a part deer, part collie doggo who loves to draw. Other than that, I'm a part-time doggo on Twitch, too!",
 

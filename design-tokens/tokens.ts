@@ -170,19 +170,85 @@ export const Colors = {
         "12": "#141414",
         "13": "#000000",
     },
-
-    fill: {
-        default: "#00000026",
-        secondary: "#0000000f",
-        tertiary: "#0000000a",
-        quaternary: "#00000005",
-    },
 }
 
 export const ColorAlias = {
-    bg: {
-        container: Colors.neutral["1"],
-        layout: Colors.neutral["3"],
+    primary: {
+        bg: Colors.blue["1"],
+        "bg-hover": Colors.blue["2"],
+        border: Colors.blue["3"],
+        "border-hover": Colors.blue["4"],
+        hover: Colors.blue["5"],
+        _: Colors.blue["6"],
+        active: Colors.blue["7"],
+        "text-hover": Colors.blue["5"],
+        text: Colors.blue["6"],
+        "text-active": Colors.blue["7"],
+    },
+
+    success: {
+        bg: Colors.green["1"],
+        "bg-hover": Colors.green["2"],
+        border: Colors.green["3"],
+        "border-hover": Colors.green["4"],
+        hover: Colors.green["4"],
+        _: Colors.green["6"],
+        active: Colors.green["7"],
+        "text-hover": Colors.green["5"],
+        text: Colors.green["6"],
+        "text-active": Colors.green["7"],
+    },
+
+    warning: {
+        bg: Colors.gold["1"],
+        "bg-hover": Colors.gold["2"],
+        border: Colors.gold["3"],
+        "border-hover": Colors.gold["4"],
+        hover: Colors.gold["4"],
+        _: Colors.gold["6"],
+        active: Colors.gold["7"],
+        "text-hover": Colors.gold["5"],
+        text: Colors.gold["6"],
+        "text-active": Colors.gold["7"],
+    },
+
+    error: {
+        bg: Colors.red["1"],
+        "bg-hover": Colors.red["1"],
+        border: Colors.red["2"],
+        "border-hover": Colors.red["3"],
+        hover: Colors.red["4"],
+        _: Colors.red["5"],
+        active: "#d9363e",
+        "text-hover": Colors.red["4"],
+        text: Colors.red["5"],
+        "text-active": "#d9363e",
+    },
+
+    "neutral-alias": {
+        text: {
+            primary: "#000000E0",
+            secondary: "#000000A6",
+            tertiary: "#00000073",
+            quaternary: "#00000040",
+        },
+
+        border: {
+            primary: Colors.neutral["5"],
+            secondary: Colors.neutral["4"],
+        },
+
+        fill: {
+            primary: "#00000026",
+            secondary: "#0000000f",
+            tertiary: "#0000000a",
+            quaternary: "#00000005",
+        },
+
+        bg: {
+            container: Colors.neutral["1"],
+            layout: Colors.neutral["3"],
+        },
     },
 }
 
@@ -205,16 +271,16 @@ export const Font = {
     },
 
     color: {
-        heading: "#000000E0",
-        normal: "#000000E0",
-        secondary: "#000000A6",
-        tertiary: "#00000073",
-        quaternary: "#00000040",
-        disabled: "#00000040",
+        heading: ColorAlias["neutral-alias"].text.primary,
+        normal: ColorAlias["neutral-alias"].text.primary,
+        secondary: ColorAlias["neutral-alias"].text.secondary,
+        tertiary: ColorAlias["neutral-alias"].text.tertiary,
+        quaternary: ColorAlias["neutral-alias"].text.quaternary,
+        disabled: ColorAlias["neutral-alias"].text.quaternary,
 
-        "border-default": Colors.neutral["5"],
-        "border-secondary": Colors.neutral["4"],
+        "border-default": ColorAlias["neutral-alias"].border.primary,
+        "border-secondary": ColorAlias["neutral-alias"].border.secondary,
         separator: "#0505050F",
-        "layout-bg": "#F5F5F5FF",
+        "layout-bg": Colors.neutral[3],
     },
 }

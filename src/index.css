@@ -27,7 +27,7 @@ html,
     h3,
     h4,
     h5 {
-        @apply text-heading;
+        @apply font-semibold text-heading;
     }
 
     h1 {
@@ -80,6 +80,120 @@ html,
 
             &-level-6 {
                 @apply drop-shadow-2xl;
+            }
+        }
+    }
+}
+
+@layer components {
+    .button {
+        &-solid,
+        &-outline,
+        &-ghost {
+            &-primary,
+            &-success,
+            &-warning,
+            &-error,
+            &-neutral {
+                @apply rounded-lg;
+            }
+        }
+
+        &-solid {
+            &-primary,
+            &-success,
+            &-warning,
+            &-error,
+            &-neutral {
+                @apply text-neutral-1;
+            }
+        }
+
+        &-solid {
+            &-primary {
+                @apply bg-primary-_  hover:bg-primary-hover;
+            }
+
+            &-success {
+                @apply bg-success-_ hover:bg-success-hover;
+            }
+
+            &-warning {
+                @apply bg-warning-_ hover:bg-warning-hover;
+            }
+
+            &-error {
+                @apply bg-error-_ hover:bg-error-hover;
+            }
+
+            &-neutral {
+                @apply bg-neutral-alias-fill-primary hover:bg-neutral-alias-fill-secondary;
+            }
+        }
+
+        &-ghost,
+        &-outline {
+            &-primary,
+            &-success,
+            &-warning,
+            &-error,
+            &-neutral {
+                @apply bg-transparent;
+            }
+        }
+
+        &-ghost,
+        &-outline {
+            &-primary {
+                @apply text-primary-_ hover:bg-primary-bg active:bg-primary-bg-hover;
+            }
+
+            &-success {
+                @apply text-success-_ hover:bg-success-bg active:bg-success-bg-hover;
+            }
+
+            &-warning {
+                @apply text-warning-_ hover:bg-warning-bg active:bg-warning-bg-hover;
+            }
+
+            &-error {
+                @apply text-error-_ hover:bg-error-bg active:bg-error-bg-hover;
+            }
+
+            &-neutral {
+                @apply text-normal hover:bg-neutral-alias-fill-tertiary active:bg-neutral-alias-fill-primary;
+            }
+        }
+
+        &-outline {
+            &-primary,
+            &-success,
+            &-warning,
+            &-error,
+            &-neutral {
+                @apply outline outline-1;
+            }
+        }
+
+        &-outline {
+            &-primary {
+                @apply outline-primary-border;
+            }
+
+            &-success {
+                @apply outline-success-border;
+            }
+
+            &-warning {
+                @apply outline-warning-border;
+            }
+
+            &-error {
+                @apply outline-error-border;
+            }
+
+            &-neutral {
+                @apply outline-neutral-alias-border-primary;
             }
         }
     }

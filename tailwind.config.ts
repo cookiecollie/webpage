@@ -3,6 +3,9 @@ import type { Config } from "tailwindcss"
 import { ColorAlias, Colors, Font } from "./design-tokens/tokens"
 
 export default {
+    // corePlugins: {
+    //     preflight: false,
+    // },
     content: ["./index.html", "./src/**/*.{html,ts,tsx}", "./src/*.{ts,tsx}"],
     theme: {
         extend: {
@@ -59,12 +62,24 @@ export default {
                     ...Colors.neutral,
                 },
 
-                bg: {
-                    ...ColorAlias.bg,
+                primary: {
+                    ...ColorAlias.primary,
                 },
 
-                fill: {
-                    ...Colors.fill,
+                success: {
+                    ...ColorAlias.success,
+                },
+
+                warning: {
+                    ...ColorAlias.warning,
+                },
+
+                error: {
+                    ...ColorAlias.error,
+                },
+
+                "neutral-alias": {
+                    ...ColorAlias["neutral-alias"],
                 },
             },
 
@@ -79,6 +94,11 @@ export default {
 
             outlineColor: {
                 default: Font.color["border-default"],
+                secondary: Font.color["border-secondary"],
+            },
+
+            textColor: {
+                ...Font.color,
             },
         },
 
@@ -92,10 +112,6 @@ export default {
 
         fontWeight: {
             ...Font.weight,
-        },
-
-        textColor: {
-            ...Font.color,
         },
     },
     plugins: [],

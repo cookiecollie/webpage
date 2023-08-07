@@ -101,11 +101,11 @@ const NavbarItem = ({
                     animate={isActive ? "active" : "inactive"}
                 >
                     <motion.div
-                        className="rounded-s-full bg-blue-5"
+                        className="rounded-s-full bg-primary-_"
                         variants={indicatorVariant}
                     />
                     <motion.div
-                        className="rounded-e-full bg-blue-5"
+                        className="rounded-e-full bg-primary-_"
                         variants={indicatorVariant}
                     />
                 </motion.div>
