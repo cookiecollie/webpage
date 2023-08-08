@@ -94,7 +94,12 @@ const NavbarItem = ({
                 whileTap={"click"}
                 className="relative flex h-full items-center"
             >
-                <motion.p variants={itemVariant}>{name}</motion.p>
+                <motion.p
+                    variants={itemVariant}
+                    className={isActive ? "text-primary-_" : "text-normal"}
+                >
+                    {name}
+                </motion.p>
 
                 <motion.div
                     className="absolute bottom-0 flex h-0.5 w-full justify-center"

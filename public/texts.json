@@ -261,6 +261,8 @@
         ]
     },
 
+    "Links": {},
+
     "Commission": {
         "content": [
             "Commissions are open with unlimited slots until further notice.",
@@ -269,7 +271,7 @@
         ]
     },
 
-    "CommissionForm": {
+    "RequestForm": {
         "content": [
             "Ready to have a drawing made by me? Go ahead and fill out the form below!",
 

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { FaGithub, FaTwitch, FaTwitter } from "react-icons/fa"
 import { IoMdInformationCircleOutline } from "react-icons/io"
@@ -6,6 +7,7 @@ import { Footer, Navbar, SocialIconObject } from "./components/composite"
 import { Separator } from "./components/style"
 import { Commission, Gallery, Home, Links, RequestForm } from "./pages"
 import { CustomRoute } from "./routes"
+import { fadeDownVariants, fadeUpVariants } from "./utils/animVariants"
 import { NavObjects, StaticTextObject } from "./utils/interfaces"
 
 function App() {
@@ -59,32 +61,56 @@ function App() {
     return (
         <BrowserRouter>
             {isLoaded && (
-                <div className="flex h-full flex-col">
-                    <div className="flex min-h-max items-center">
+                <motion.div
+                    className="flex h-full flex-col"
+                    initial={"initial"}
+                    animate={"finish"}
+                >
+                    <motion.div
+                        className="flex min-h-max items-center"
+                        transition={{ duration: 1 }}
+                        variants={fadeDownVariants}
+                    >
                         <Navbar
                             homeSection=""
                             endSection={<IoMdInformationCircleOutline />}
                             align="left"
                             items={navigationObjects}
                         />
-                    </div>
+                    </motion.div>
 
-                    <div className="flex px-5">
+                    <motion.div
+                        className="flex px-5"
+                        transition={{ duration: 1 }}
+                        variants={fadeDownVariants}
+                    >
                         <Separator />
-                    </div>
+                    </motion.div>
 
-                    <div className="min-h-max flex-1 px-32 py-16">
+                    <motion.div
+                        // variants={fadeUpVariants}
+                        transition={{ duration: 1 }}
+                        className="min-h-max flex-1 px-28 py-16 text-secondary"
+                    >
                         <CustomRoute route={navigationObjects} />
-                    </div>
+                    </motion.div>
 
-                    <div className="flex px-5">
+                    <motion.div
+                        className="flex px-5"
+                        transition={{ duration: 1 }}
+                        variants={fadeUpVariants}
+                    >
                         <Separator />
-                    </div>
+                    </motion.div>
 
-                    <div className="flex min-h-max">
+                    <motion.div
+                        className="flex min-h-max"
+                        transition={{ duration: 1 }}
+                        variants={fadeUpVariants}
+                    >
                         <Footer socialsItems={footerSocials} />
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             )}
         </BrowserRouter>
     )

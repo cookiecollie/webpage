@@ -1,4 +1,4 @@
-import { Elevation, Surface } from "../../primtives"
+import { Elevation, PolyCompProp, Surface } from "../../primtives"
 
 interface CardProps {
     variant?: "outlined" | "elevated" | "filled"
@@ -33,8 +33,17 @@ export const Card = (props: React.PropsWithChildren<CardProps>) => {
     )
 }
 
-const SubCardComp = ({ children }: React.PropsWithChildren) => {
-    return <div className="p-5">{children}</div>
+const SubCardComp = <Comp extends React.ElementType>({
+    children,
+    as,
+    ...allElse
+}: PolyCompProp<Comp>) => {
+    const Component = as || "div"
+    return (
+        <Component className="p-5" {...allElse}>
+            {children}
+        </Component>
+    )
 }
 
 Card.Header = SubCardComp

@@ -18,6 +18,7 @@ export const Button = <Comp extends React.ElementType>(
         variant = "solid",
         leftIcon,
         rightIcon,
+        ...allElse
     } = props
     const Component = as || "button"
 
@@ -76,7 +77,7 @@ export const Button = <Comp extends React.ElementType>(
                 WebkitUserSelect: "none",
                 cursor: "pointer",
             }}
-            {...props}
+            {...allElse}
         >
             <IconContext.Provider value={{ size: "16px" }}>
                 {leftIcon && <span>{leftIcon}</span>}
