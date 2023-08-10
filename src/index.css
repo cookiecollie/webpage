@@ -54,6 +54,12 @@ html,
 }
 
 @layer utilities {
+    .rounded {
+        &-default {
+            @apply rounded-2xl;
+        }
+    }
+
     .drop {
         &-shadow {
             &-level-0 {
@@ -196,6 +202,71 @@ html,
 
             &-neutral {
                 @apply outline-neutral-alias-border-primary;
+            }
+        }
+    }
+
+    .card {
+        &-outline,
+        &-elevated,
+        &-simple {
+            &-horizontal,
+            &-vertical {
+                @apply rounded-default;
+            }
+        }
+
+        &-outline {
+            &-horizontal,
+            &-vertical {
+                @apply outline outline-default;
+            }
+        }
+
+        &-outline,
+        &-elevated,
+        &-simple {
+            &-horizontal {
+                @apply flex-row;
+            }
+
+            &-vertical {
+                @apply flex-col;
+            }
+        }
+    }
+
+    .list {
+        &-disc,
+        &-decimal,
+        &-none {
+            &-inside {
+                @apply list-inside;
+            }
+
+            &-outside {
+                @apply list-outside;
+            }
+        }
+
+        &-disc {
+            &-inside,
+            &-outside {
+                @apply list-disc;
+            }
+        }
+
+        &-decimal {
+            &-inside,
+            &-outside {
+                @apply list-decimal;
+            }
+        }
+
+        &-none {
+            &-inside,
+            &-outside {
+                @apply list-none;
             }
         }
     }

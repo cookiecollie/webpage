@@ -8,7 +8,7 @@ interface TypoProps {
 export const Typography = <Comp extends React.ElementType>(
     props: PolyCompProp<Comp, TypoProps>
 ) => {
-    const { as, children, textAlign = "left", className = "" } = props
+    const { as, children, textAlign, className = "" } = props
     const Component = as || "p"
 
     const alignment =
@@ -22,7 +22,9 @@ export const Typography = <Comp extends React.ElementType>(
             ? "text-start"
             : textAlign === "end"
             ? "text-end"
-            : "text-justify"
+            : textAlign === "justify"
+            ? "text-justify"
+            : ""
 
     return (
         <Component {...props} className={`${alignment} ${className}`}>

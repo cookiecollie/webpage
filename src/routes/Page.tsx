@@ -11,5 +11,5 @@ export const Page = ({
     useEffect(() => {
         document.title = title || "uwu"
     }, [title])
-    return <div className="text-md">{children}</div>
+    return <div>{children}</div>
 }

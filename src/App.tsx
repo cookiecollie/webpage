@@ -5,7 +5,7 @@ import { IoMdInformationCircleOutline } from "react-icons/io"
 import { BrowserRouter } from "react-router-dom"
 import { Footer, Navbar, SocialIconObject } from "./components/composite"
 import { Separator } from "./components/style"
-import { Commission, Gallery, Home, Links, RequestForm } from "./pages"
+import { Commission, Home, Links, RequestForm, TOS } from "./pages"
 import { CustomRoute } from "./routes"
 import { fadeDownVariants, fadeUpVariants } from "./utils/animVariants"
 import { NavObjects, StaticTextObject } from "./utils/interfaces"
@@ -17,10 +17,64 @@ function App() {
             heading: "",
             content: [],
         },
-        Gallery: "",
-        Commission: "",
-        Links: "",
-        RequestForm: "",
+        Commission: {
+            headerTexts: [],
+            extras: {
+                Background: [],
+                Others: [],
+            },
+            emotes: {
+                description: [],
+                exampleLink: "",
+                price: "",
+                title: "",
+            },
+            fullBody: {
+                description: [],
+                exampleLink: "",
+                price: "",
+                title: "",
+            },
+            halfBody: {
+                description: [],
+                exampleLink: "",
+                price: "",
+                title: "",
+            },
+            plushPhoneBG: {
+                description: [],
+                exampleLink: "",
+                price: "",
+                title: "",
+            },
+            refSheet: {
+                description: [],
+                exampleLink: "",
+                price: "",
+                title: "",
+            },
+        },
+        TOS: {
+            commDetails: {
+                details: [],
+                paymentProcess: [],
+                willDraw: [],
+                willNotDraw: [],
+            },
+            importants: [],
+            tos: [],
+        },
+        RequestForm: {
+            formGuide: [{ content: "", field: "" }],
+            headerTexts: [],
+        },
+        ImgLinks: {
+            emotes: [],
+            fullBody: [],
+            halfBody: [],
+            plushPhoneBG: [],
+            refSheet: [],
+        },
     })
 
     useEffect(() => {
@@ -34,10 +88,14 @@ function App() {
 
     const navigationObjects: NavObjects[] = [
         { itemKey: "", name: "Home", page: <Home staticTexts={staticTexts} /> },
-        { itemKey: "gallery", name: "Gallery", page: <Gallery /> },
-        { itemKey: "links", name: "Links", page: <Links /> },
-        { itemKey: "commission", name: "Commission", page: <Commission /> },
+        {
+            itemKey: "commission",
+            name: "Commission",
+            page: <Commission staticTexts={staticTexts} />,
+        },
+        { itemKey: "tos", name: "TOS", page: <TOS /> },
         { itemKey: "form", name: "Request Form", page: <RequestForm /> },
+        { itemKey: "links", name: "Links", page: <Links /> },
     ]
 
     const footerSocials: SocialIconObject[] = [
@@ -88,9 +146,8 @@ function App() {
                     </motion.div>
 
                     <motion.div
-                        // variants={fadeUpVariants}
                         transition={{ duration: 1 }}
-                        className="min-h-max flex-1 px-28 py-16 text-secondary"
+                        className="min-h-max flex-1 px-36 py-16 text-secondary"
                     >
                         <CustomRoute route={navigationObjects} />
                     </motion.div>

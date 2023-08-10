@@ -1,7 +1,7 @@
 import { Elevation, PolyCompProp, Surface } from "../../primtives"
 
 interface CardProps {
-    variant?: "outlined" | "elevated" | "filled"
+    variant?: "outline" | "elevated" | "simple"
     className?: string
     orientation?: "horizontal" | "vertical"
 }
@@ -13,22 +13,34 @@ export const Card = (props: React.PropsWithChildren<CardProps>) => {
         className,
         orientation = "horizontal",
     } = props
+
+    const _horizontal =
+        variant === "simple"
+            ? "card-simple-horizontal"
+            : variant === "elevated"
+            ? "card-elevated-horizontal"
+            : "card-outline-horizontal"
+
+    const _vertical =
+        variant === "simple"
+            ? "card-simple-vertical"
+            : variant === "elevated"
+            ? "card-elevated-vertical"
+            : "card-outline-vertical"
     return (
         <Surface
             elevation={
                 variant === "elevated" ? Elevation["level-2"] : Elevation.none
             }
             className={`${
-                variant === "outlined" ? "outline outline-default" : ""
-            } ${className} rounded-md`}
+                className
+                    ? className
+                    : orientation === "horizontal"
+                    ? _horizontal
+                    : _vertical
+            } overflow-hidden`}
         >
-            <div
-                className={`flex h-full w-full ${
-                    orientation === "horizontal" ? "flex-row" : "flex-col"
-                }`}
-            >
-                {children}
-            </div>
+            {children}
         </Surface>
     )
 }

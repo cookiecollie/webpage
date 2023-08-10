@@ -100,10 +100,14 @@ export default {
             textColor: {
                 ...Font.color,
             },
+
+            borderRadius: {
+                default: "",
+            },
         },
 
         fontFamily: {
-            sans: ["Fredoka", "Comfortaa", "Arial"],
+            sans: ["Comfortaa", "Arial"],
         },
 
         fontSize: {

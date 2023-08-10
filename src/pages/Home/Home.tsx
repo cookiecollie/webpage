@@ -6,7 +6,7 @@ import { fadeUpVariants } from "../../utils/animVariants"
 import { StaticTextObject } from "../../utils/interfaces"
 
 interface HomeProps {
-    staticTexts?: Pick<StaticTextObject, "Home">
+    staticTexts: Pick<StaticTextObject, "Home">
 }
 
 export const Home = ({ staticTexts }: HomeProps) => {
@@ -18,16 +18,20 @@ export const Home = ({ staticTexts }: HomeProps) => {
         >
             <img
                 src="/fgx.png"
-                className="w-72 rounded-lg object-cover"
+                className="w-72 rounded-default object-cover"
                 alt="Drawing of my OC Cookie, by InformalScout"
                 title="Drawing of my OC Cookie, by InformalScout"
             />
 
             <div className="flex flex-col gap-10">
                 <div className="flex flex-col gap-4">
-                    <Typography as={"h2"} className="font-medium">
-                        {staticTexts?.Home.heading}
-                    </Typography>
+                    <div className="flex flex-col font-medium">
+                        <Typography as={"h1"}>Heyo!</Typography>
+
+                        <Typography as={"h3"} className="font-medium">
+                            I&apos;m Cookie! Nice to meet ya!
+                        </Typography>
+                    </div>
 
                     {staticTexts?.Home.content.map((item, i) => (
                         <Typography

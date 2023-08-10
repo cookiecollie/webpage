@@ -14,6 +14,6 @@ interface SurfaceProps {
 }
 
 export const Surface = (props: React.PropsWithChildren<SurfaceProps>) => {
-    const { children, elevation ,className} = props
-    return <div className={`${elevation} ${className}`}>{children}</div>
+    const { children, elevation, className } = props
+    return <div className={`${elevation} ${className} flex`}>{children}</div>
 }
