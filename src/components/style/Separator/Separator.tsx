@@ -17,7 +17,7 @@ export const Separator = ({
                         : "border-4"
                 }`}
             />
-            <span className="absolute left-1/2 -translate-x-1/2 bg-white px-4">
+            <span className="absolute left-1/2 inline-flex -translate-x-1/2 bg-white px-4">
                 {children}
             </span>
         </div>

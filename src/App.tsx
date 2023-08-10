@@ -93,7 +93,7 @@ function App() {
             name: "Commission",
             page: <Commission staticTexts={staticTexts} />,
         },
-        { itemKey: "tos", name: "TOS", page: <TOS /> },
+        { itemKey: "tos", name: "TOS", page: <TOS staticText={staticTexts} /> },
         { itemKey: "form", name: "Request Form", page: <RequestForm /> },
         { itemKey: "links", name: "Links", page: <Links /> },
     ]

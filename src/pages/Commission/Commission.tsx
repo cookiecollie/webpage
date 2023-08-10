@@ -29,7 +29,7 @@ export const Commission = ({ staticTexts }: Props) => {
                 <div className="flex flex-col gap-2">
                     {Object.entries(extras).map(([k, v]) => (
                         <>
-                            <Typography className="font-semibold">{`---${k}---`}</Typography>
+                            <Typography className="font-bold">{`---${k}---`}</Typography>
                             {v.map((item, i) => (
                                 <Typography key={i}>{item}</Typography>
                             ))}

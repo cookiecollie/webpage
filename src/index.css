@@ -29,7 +29,7 @@ html,
     h3,
     h4,
     h5 {
-        @apply font-semibold text-heading;
+        @apply font-bold text-heading;
     }
 
     h1 {
