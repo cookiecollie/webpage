@@ -184,6 +184,7 @@ export const ColorAlias = {
         "text-hover": Colors.blue["5"],
         text: Colors.blue["6"],
         "text-active": Colors.blue["7"],
+        disabled: Colors.blue[4],
     },
 
     success: {

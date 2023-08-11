@@ -3,9 +3,6 @@ import type { Config } from "tailwindcss"
 import { ColorAlias, Colors, Font } from "./design-tokens/tokens"
 
 export default {
-    // corePlugins: {
-    //     preflight: false,
-    // },
     content: ["./index.html", "./src/**/*.{html,ts,tsx}", "./src/*.{ts,tsx}"],
     theme: {
         extend: {

@@ -59,7 +59,7 @@ export const Button = <Comp extends React.ElementType>(
 
     return (
         <Component
-            className={`flex h-10 items-center gap-2 px-5 font-medium transition-colors duration-300 ease-in-out ${
+            className={`flex h-10 items-center gap-2 px-5 font-medium transition-colors duration-300 ease-in-out disabled:bg-primary-disabled ${
                 colorScheme === "primary"
                     ? _primary
                     : colorScheme === "success"

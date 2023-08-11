@@ -19,6 +19,23 @@ html,
     /* height: 100dvh !important */
 }
 
+input    {
+    all: unset;
+}
+
+textarea {
+    @apply appearance-none rounded-lg border-[1px] border-solid border-neutral-alias-border-primary px-4 py-2 outline-none outline-offset-2 transition-colors duration-200 invalid:border-error-active invalid:ring-1 invalid:ring-error-active focus:border-primary-active focus:ring-1 focus:ring-primary-active hover:[&:not(:focus):not(:invalid)]:border-primary-border-hover;
+    min-height: 5rem;
+}
+
+input {
+    @apply h-10 rounded-lg border-[1px] border-solid border-neutral-alias-border-primary px-4 outline-none transition-all duration-200 focus:border-primary-active focus:ring-1 focus:ring-primary-active hover:[&:not(:focus):not(:invalid)]:border-primary-border-hover [&[aria-invalid]]:border-error-active [&[aria-invalid]]:ring-1 [&[aria-invalid]]:ring-error-active;
+}
+
+select {
+    @apply relative h-10 w-full appearance-none rounded-lg border-[1px] border-solid border-neutral-alias-border-primary bg-none ps-4 outline-none transition-all duration-200 invalid:border-error-active invalid:ring-1 invalid:ring-error-active focus:border-primary-active focus:ring-1 focus:ring-primary-active hover:[&:not(:focus):not(:invalid)]:border-primary-border-hover [&~div]:right-2 [&~div]:h-full [&~div]:w-6;
+}
+
 @layer base {
     html {
         @apply text-normal;
