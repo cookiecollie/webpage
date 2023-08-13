@@ -1,0 +1,56 @@
+@tailwind components;
+
+@layer components {
+    .link-button {
+        &-twitter,
+        &-twitch,
+        &-youtube,
+        &-discord,
+        &-tumblr,
+        &-kofi {
+            @apply rounded-lg;
+        }
+
+        &-twitter {
+            --brand-color: #1da1f2;
+            --hover-color: #1da1f21a;
+            --active-color: #1da1f23a;
+            @apply text-[var(--brand-color)] outline outline-1 outline-[var(--brand-color)] hover:bg-[var(--hover-color)] active:bg-[var(--active-color)];
+        }
+
+        &-twitch {
+            --brand-color: #6441a5;
+            --hover-color: #6441a51a;
+            --active-color: #6441a53a;
+            @apply text-[var(--brand-color)] outline outline-1 outline-[var(--brand-color)] hover:bg-[var(--hover-color)] active:bg-[var(--active-color)];
+        }
+
+        &-youtube {
+            --brand-color: #c4302b;
+            --hover-color: #c4302b1a;
+            --active-color: #c4302b3a;
+            @apply text-[var(--brand-color)] outline outline-1 outline-[var(--brand-color)] hover:bg-[var(--hover-color)] active:bg-[var(--active-color)];
+        }
+
+        &-discord {
+            --brand-color: #7289da;
+            --hover-color: #7289da1a;
+            --active-color: #7289da3a;
+            @apply text-[var(--brand-color)] outline outline-1 outline-[var(--brand-color)] hover:bg-[var(--hover-color)] active:bg-[var(--active-color)];
+        }
+
+        &-tumblr {
+            --brand-color: #36465d;
+            --hover-color: #36465d1a;
+            --active-color: #36465d3a;
+            @apply text-[var(--brand-color)] outline outline-1 outline-[var(--brand-color)] hover:bg-[var(--hover-color)] active:bg-[var(--active-color)];
+        }
+
+        &-kofi {
+            --brand-color: #ff5e5b;
+            --hover-color: #ff5e5b1a;
+            --active-color: #ff5e5b3a;
+            @apply text-[var(--brand-color)] outline outline-1 outline-[var(--brand-color)] hover:bg-[var(--hover-color)] active:bg-[var(--active-color)];
+        }
+    }
+}

@@ -1,3 +1,4 @@
+@import "./custom-styles/LinkButton.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +20,7 @@ html,
     /* height: 100dvh !important */
 }
 
-input    {
+input {
     all: unset;
 }
 
@@ -76,41 +77,10 @@ select {
             @apply rounded-2xl;
         }
     }
-
-    .drop {
-        &-shadow {
-            &-level-0 {
-                @apply drop-shadow-none;
-            }
-
-            &-level-1 {
-                @apply drop-shadow-sm;
-            }
-
-            &-level-2 {
-                @apply drop-shadow;
-            }
-
-            &-level-3 {
-                @apply drop-shadow-md;
-            }
-
-            &-level-4 {
-                @apply drop-shadow-lg;
-            }
-
-            &-level-5 {
-                @apply drop-shadow-xl;
-            }
-
-            &-level-6 {
-                @apply drop-shadow-2xl;
-            }
-        }
-    }
 }
 
 @layer components {
+    
     .button {
         &-solid,
         &-outline,
@@ -136,19 +106,19 @@ select {
 
         &-solid {
             &-primary {
-                @apply bg-primary-_  hover:bg-primary-hover;
+                @apply bg-primary-_  hover:bg-primary-hover disabled:bg-primary-disabled;
             }
 
             &-success {
-                @apply bg-success-_ hover:bg-success-hover;
+                @apply bg-success-_ hover:bg-success-hover disabled:bg-success-disabled;
             }
 
             &-warning {
-                @apply bg-warning-_ hover:bg-warning-hover;
+                @apply bg-warning-_ hover:bg-warning-hover disabled:bg-warning-disabled;
             }
 
             &-error {
-                @apply bg-error-_ hover:bg-error-hover;
+                @apply bg-error-_ hover:bg-error-hover disabled:bg-error-disabled;
             }
 
             &-neutral {

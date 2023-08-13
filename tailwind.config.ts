@@ -104,7 +104,7 @@ export default {
         },
 
         fontFamily: {
-            sans: ["Comfortaa", "Arial"],
+            sans: ["Fredoka", "Comfortaa", "Arial"],
         },
 
         fontSize: {

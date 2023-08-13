@@ -9,7 +9,7 @@ export const Page = ({
     title,
 }: React.PropsWithChildren<PageProps>) => {
     useEffect(() => {
-        document.title = title || "uwu"
+        document.title = `${title} | Cookie Collie` || "UwU"
     }, [title])
     return <div>{children}</div>
 }

@@ -1,11 +1,18 @@
 import { IconContext } from "react-icons"
 import { PolyCompProp } from "../../primtives"
 
-interface ButtonProps {
+export interface ButtonProps {
     variant?: "solid" | "ghost" | "outline"
-    colorScheme?: "primary" | "success" | "warning" | "error" | "neutral"
+    colorScheme?:
+        | "primary"
+        | "success"
+        | "warning"
+        | "error"
+        | "neutral"
+        | "none"
     leftIcon?: React.ReactNode
     rightIcon?: React.ReactNode
+    className?: string
 }
 
 export const Button = <Comp extends React.ElementType>(
@@ -18,6 +25,7 @@ export const Button = <Comp extends React.ElementType>(
         variant = "solid",
         leftIcon,
         rightIcon,
+        className,
         ...allElse
     } = props
     const Component = as || "button"
@@ -59,7 +67,7 @@ export const Button = <Comp extends React.ElementType>(
 
     return (
         <Component
-            className={`flex h-10 items-center gap-2 px-5 font-medium transition-colors duration-300 ease-in-out disabled:bg-primary-disabled ${
+            className={`flex h-10 items-center justify-between px-5 font-medium transition-colors duration-300 ease-in-out [&>span:first-child]:ms-0 [&>span:last-child]:me-0 [&>span]:mx-2 ${className} ${
                 colorScheme === "primary"
                     ? _primary
                     : colorScheme === "success"
@@ -68,7 +76,9 @@ export const Button = <Comp extends React.ElementType>(
                     ? _warning
                     : colorScheme === "error"
                     ? _error
-                    : _neutral
+                    : colorScheme === "neutral"
+                    ? _neutral
+                    : ""
             }`}
             style={{
                 userSelect: "none",
@@ -80,9 +90,13 @@ export const Button = <Comp extends React.ElementType>(
             {...allElse}
         >
             <IconContext.Provider value={{ size: "16px" }}>
-                {leftIcon && <span>{leftIcon}</span>}
-                {children}
-                {rightIcon && <span>{rightIcon}</span>}
+                <span className="inline-flex flex-1 justify-end">
+                    {leftIcon}
+                </span>
+                <span className={leftIcon && rightIcon ? "" : "!mx-0"}>
+                    {children}
+                </span>
+                <span className="inline-flex flex-1">{rightIcon}</span>
             </IconContext.Provider>
         </Component>
     )

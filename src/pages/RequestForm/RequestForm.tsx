@@ -4,6 +4,7 @@ import { Select } from "@chakra-ui/select"
 import { Textarea } from "@chakra-ui/textarea"
 import { motion } from "framer-motion"
 import { useState } from "react"
+import { sendRequestForm, testAPI } from "../../api"
 import {
     Button,
     CustomCheckbox,
@@ -34,6 +35,7 @@ export const RequestForm = ({ staticTexts }: Props) => {
         setDetailedBG(false)
     }
 
+    const [sendStatus, setSendStatus] = useState("")
     const handleFormSubmit = (e: any) => {
         e.preventDefault()
         const formValue = {
@@ -48,6 +50,7 @@ export const RequestForm = ({ staticTexts }: Props) => {
             "extra-info": e.target.elements["extra-info"].value,
         }
         console.log(formValue)
+        sendRequestForm(formValue, "", setSendStatus)
     }
 
     return (

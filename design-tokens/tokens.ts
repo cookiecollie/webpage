@@ -198,6 +198,7 @@ export const ColorAlias = {
         "text-hover": Colors.green["5"],
         text: Colors.green["6"],
         "text-active": Colors.green["7"],
+        disabled: Colors.green[4],
     },
 
     warning: {
@@ -211,6 +212,7 @@ export const ColorAlias = {
         "text-hover": Colors.gold["5"],
         text: Colors.gold["6"],
         "text-active": Colors.gold["7"],
+        disabled: Colors.gold[4],
     },
 
     error: {
@@ -224,6 +226,7 @@ export const ColorAlias = {
         "text-hover": Colors.red["4"],
         text: Colors.red["5"],
         "text-active": "#d9363e",
+        disabled: Colors.red[4],
     },
 
     "neutral-alias": {

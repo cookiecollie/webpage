@@ -57,32 +57,25 @@ export const Home = ({ staticTexts }: HomeProps) => {
 
                 <div className="flex gap-5">
                     <Button
-                        variant="outline"
                         leftIcon={<FaTwitter />}
+                        className="link-button-twitter"
+                        colorScheme="none"
                         as={"a"}
                         href="https://twitter.com/CookieCollie"
                         target="_blank"
                         rel="nopenner noreferrer"
-                        style={{
-                            color: "#00acee",
-                            outlineColor: "#00acee",
-                        }}
                     >
                         Twitter
                     </Button>
 
                     <Button
-                        colorScheme="neutral"
-                        variant="outline"
+                        colorScheme="none"
+                        className="link-button-twitch"
                         leftIcon={<FaTwitch />}
                         as={"a"}
                         href="https://www.twitch.tv/cookiecollie"
                         target="_blank"
                         rel="nopenner noreferrer"
-                        style={{
-                            color: "#6441a5",
-                            outlineColor: "#6441a5",
-                        }}
                     >
                         Twitch
                     </Button>
