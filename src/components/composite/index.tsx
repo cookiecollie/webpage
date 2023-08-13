@@ -9,6 +9,7 @@ import { CustomLabel } from "./FormControl/CustomLabel/CustomLabel"
 import { CustomRadio } from "./FormControl/CustomRadio/CustomRadio"
 import { CustomSelect } from "./FormControl/CustomSelect/CustomSelect"
 import { List } from "./List/List"
+import { Modal } from "./Modal/Modal"
 import { Navbar } from "./Navbar/Navbar"
 
 export {
@@ -23,6 +24,7 @@ export {
     CustomSelect,
     Footer,
     List,
+    Modal,
     Navbar,
 }
 export type { SocialIconObject }

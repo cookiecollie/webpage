@@ -3,10 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    /* font-size: 16px; */
-    /* overflow-y: scroll; */
-    scrollbar-gutter: stable both-edges;
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body.modal-open {
+    overflow-y: hidden;
 }
 
 :root {
@@ -80,7 +87,6 @@ select {
 }
 
 @layer components {
-    
     .button {
         &-solid,
         &-outline,

@@ -9,13 +9,13 @@ export async function testAPI() {
 
 export async function sendRequestForm(
     form: any,
-    CAPTHCHAToken: string,
+    CAPTCHAToken: string,
     setStatus?: (status: string) => void
 ) {
     return await axios
         .post(`${API_URL}/api/request`, {
             form: form,
-            CAPTHCHAToken: CAPTHCHAToken,
+            CAPTCHAToken: CAPTCHAToken,
         })
         .then(() => {
             setStatus?.("OK")

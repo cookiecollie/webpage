@@ -3,8 +3,12 @@ import { RadioGroup } from "@chakra-ui/radio"
 import { Select } from "@chakra-ui/select"
 import { Textarea } from "@chakra-ui/textarea"
 import { motion } from "framer-motion"
-import { useState } from "react"
-import { sendRequestForm, testAPI } from "../../api"
+import { useEffect, useRef, useState } from "react"
+import ReCAPTCHA from "react-google-recaptcha"
+import { IconContext } from "react-icons"
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai"
+import { useNavigate } from "react-router-dom"
+import { sendRequestForm } from "../../api"
 import {
     Button,
     CustomCheckbox,
@@ -12,10 +16,12 @@ import {
     CustomFormControl,
     CustomLabel,
     CustomRadio,
+    Modal,
 } from "../../components/composite"
 import { Separator, Typography } from "../../components/style"
 import { fadeUpVariants } from "../../utils/animVariants"
 import { StaticTextObject } from "../../utils/interfaces"
+import { useDisclosure } from "../../utils/useDisclosure"
 import { useValidation } from "../../utils/useValidation"
 
 interface Props {
@@ -23,7 +29,11 @@ interface Props {
 }
 
 export const RequestForm = ({ staticTexts }: Props) => {
-    const { formGuide, headerTexts } = staticTexts.RequestForm
+    const _raw_recaptchaSiteKey: string = import.meta.env
+        .VITE_RECAPTCHA_SITE_KEY
+    const recaptchaSiteKey = _raw_recaptchaSiteKey.replace(/["]+/g, "")
+
+    const { headerTexts } = staticTexts.RequestForm
     const emailValidator = useValidation("email")
     const refSheetValidator = useValidation("none")
 
@@ -36,7 +46,12 @@ export const RequestForm = ({ staticTexts }: Props) => {
     }
 
     const [sendStatus, setSendStatus] = useState("")
+    const recaptchaRef = useRef<ReCAPTCHA>(null)
+    const [recaptchaToken, setRecaptchaToken] = useState<string>("")
+    const [isSent, setIsSent] = useState(false)
+
     const handleFormSubmit = (e: any) => {
+        setIsSent(true)
         e.preventDefault()
         const formValue = {
             email: e.target.elements["email"].value,
@@ -50,16 +65,66 @@ export const RequestForm = ({ staticTexts }: Props) => {
             "extra-info": e.target.elements["extra-info"].value,
         }
         console.log(formValue)
-        sendRequestForm(formValue, "", setSendStatus)
+        sendRequestForm(formValue, recaptchaToken, setSendStatus)
+    }
+
+    useEffect(()=>{
+        sendStatus && onOpen()
+    },[sendStatus])
+
+    const { isOpen, onClose, onOpen } = useDisclosure()
+    const navigate = useNavigate()
+
+    const handleAlertOnClose = () => {
+        onClose()
+        navigate(0)
     }
 
     return (
         <motion.div
-            className="flex flex-col gap-10 text-center [&>div]:flex [&>div]:flex-col"
+            className="flex flex-col gap-10 text-center"
             variants={fadeUpVariants}
             transition={{ duration: 1 }}
         >
-            <div className="gap-4">
+            <Modal isOpen={isOpen} onClose={handleAlertOnClose}>
+                <Modal.Body>
+                    <IconContext.Provider value={{ size: "3rem" }}>
+                        <div className="flex flex-col items-center p-5 text-center">
+                            {sendStatus === "OK" ? (
+                                <>
+                                    <span className="text-success-_">
+                                        <AiOutlineCheckCircle />
+                                    </span>
+
+                                    <Typography as={"h3"}>
+                                        Form Sent!
+                                    </Typography>
+
+                                    <Typography>
+                                        Thank you for commissioning me! I will
+                                        be in contact with you soon!
+                                    </Typography>
+                                </>
+                            ) : (
+                                <>
+                                    <span className="text-error-_">
+                                        <AiOutlineCloseCircle />
+                                    </span>
+
+                                    <Typography as={"h3"}>Error</Typography>
+
+                                    <Typography>
+                                        There seems to be something wrong.
+                                        Please try again later!
+                                    </Typography>
+                                </>
+                            )}
+                        </div>
+                    </IconContext.Provider>
+                </Modal.Body>
+            </Modal>
+
+            <div className="flex flex-col gap-4">
                 <Typography as={"h1"}>Request Form</Typography>
 
                 <div className="flex flex-col gap-2">
@@ -71,7 +136,7 @@ export const RequestForm = ({ staticTexts }: Props) => {
 
             <Separator />
 
-            <div className="text-left">
+            <div className="flex flex-col text-left">
                 <form onSubmit={handleFormSubmit}>
                     <div className="flex flex-col gap-10">
                         <div className="flex flex-col gap-6 px-10">
@@ -182,13 +247,27 @@ export const RequestForm = ({ staticTexts }: Props) => {
                             </CustomFormControl>
                         </div>
 
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col items-center gap-5">
+                            <ReCAPTCHA
+                                sitekey={recaptchaSiteKey}
+                                ref={recaptchaRef}
+                                onChange={() => {
+                                    recaptchaRef.current
+                                        ? setRecaptchaToken(
+                                              recaptchaRef.current.getValue()!
+                                          )
+                                        : setRecaptchaToken("")
+                                }}
+                                theme="light"
+                            />
                             <Button
                                 as={"button"}
                                 type="submit"
                                 disabled={
                                     emailValidator.isError ||
-                                    refSheetValidator.isError
+                                    refSheetValidator.isError ||
+                                    recaptchaToken === "" ||
+                                    isSent
                                 }
                             >
                                 Submit
