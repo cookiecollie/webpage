@@ -210,7 +210,7 @@ select {
         }
 
         &-outline {
-            &-horizontal,
+            c &-horizontal,
             &-vertical {
                 @apply outline outline-default;
             }
@@ -260,6 +260,61 @@ select {
             &-inside,
             &-outside {
                 @apply list-none;
+            }
+        }
+    }
+
+    .drawer {
+        &-top,
+        &-left,
+        &-right,
+        &-bottom {
+            @apply fixed z-[999] bg-neutral-alias-bg-container shadow-2xl;
+        }
+
+        &-top {
+            @apply left-0 top-0 w-full rounded-b-2xl;
+        }
+
+        &-left {
+            @apply left-0 top-0 h-full rounded-e-2xl;
+        }
+
+        &-right {
+            @apply right-0 top-0 h-full rounded-s-2xl;
+        }
+
+        &-bottom {
+            @apply bottom-0 left-0 w-full rounded-t-2xl;
+        }
+
+        &-x {
+            &-sm {
+                @apply w-[30%];
+            }
+            &-lg {
+                @apply w-[50%];
+            }
+            &-xl {
+                @apply w-[75%];
+            }
+            &-full {
+                @apply w-full !rounded-none;
+            }
+        }
+
+        &-y {
+            &-sm {
+                @apply h-[30%];
+            }
+            &-lg {
+                @apply h-[50%];
+            }
+            &-xl {
+                @apply h-[75%];
+            }
+            &-full {
+                @apply h-full !rounded-none;
             }
         }
     }

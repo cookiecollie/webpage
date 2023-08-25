@@ -1,5 +1,6 @@
 import { Button } from "./Button/Button"
 import { Card } from "./Card/Card"
+import { Drawer } from "./Drawer/Drawer"
 import { Footer, SocialIconObject } from "./Footer/Footer"
 import { CustomCheckbox } from "./FormControl/CustomCheckbox/CustomCheckbox"
 import { CustomFormControl } from "./FormControl/CustomFormControl/CustomFormControl"
@@ -22,6 +23,7 @@ export {
     CustomLabel,
     CustomRadio,
     CustomSelect,
+    Drawer,
     Footer,
     List,
     Modal,

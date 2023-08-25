@@ -81,3 +81,67 @@ export const flexSimpleFade = {
         display: "block",
     },
 }
+
+export const cornerExpandTL = {
+    initial: {
+        clipPath: "inset(0% 100% 100% 0% round 1rem)",
+        opaciy: 0,
+        transitionEnd: {
+            display: "none",
+        },
+    },
+
+    finish: {
+        clipPath: "inset(0% 0% 0% 0%)",
+        display: "block",
+        opacity: 1,
+    },
+}
+
+export const cornerExpandTR = {
+    initial: {
+        clipPath: "inset(0% 0% 100% 100% round 1rem)",
+        opacity: 0,
+        transitionEnd: {
+            display: "none",
+        },
+    },
+
+    finish: {
+        clipPath: "inset(0% 0% 0% 0%)",
+        display: "block",
+        opacity: 1,
+    },
+}
+
+export const cornerExpandBL = {
+    initial: {
+        clipPath: "inset(100% 100% 0% 0% round 1rem)",
+        opacity: 0,
+        transitionEnd: {
+            display: "none",
+        },
+    },
+
+    finish: {
+        clipPath: "inset(0% 0% 0% 0%)",
+        display: "block",
+        opacity: 1,
+    },
+}
+
+export const cornerExpandBR = {
+    initial: {
+        clipPath: "inset(100% 0% 0% 100% round 1rem)",
+        opacity: 0,
+        transitionEnd: {
+            display: "none",
+        },
+    },
+
+    finish: {
+        clipPath: "inset(0% 0% 0% 0%)",
+        display: "block",
+        opacity: 1,
+    },
+}

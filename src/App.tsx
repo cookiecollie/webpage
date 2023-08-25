@@ -3,12 +3,18 @@ import { useEffect, useState } from "react"
 import { FaGithub, FaTwitch, FaTwitter } from "react-icons/fa"
 import { IoMdInformationCircleOutline } from "react-icons/io"
 import { BrowserRouter } from "react-router-dom"
-import { Footer, Navbar, SocialIconObject } from "./components/composite"
+import {
+    Drawer,
+    Footer,
+    Navbar,
+    SocialIconObject,
+} from "./components/composite"
 import { Separator } from "./components/style"
 import { Commission, Home, Links, RequestForm, TOS } from "./pages"
 import { CustomRoute } from "./routes"
 import { fadeDownVariants, fadeUpVariants } from "./utils/animVariants"
 import { NavObjects, StaticTextObject } from "./utils/interfaces"
+import { useDisclosure } from "./utils/useDisclosure"
 
 function App() {
     const [isLoaded, setIsLoaded] = useState<boolean>(false)
@@ -120,8 +126,17 @@ function App() {
         },
     ]
 
+    const drawerDisclosure = useDisclosure()
+
     return (
         <BrowserRouter>
+            <Drawer
+                isOpen={drawerDisclosure.isOpen}
+                onClose={drawerDisclosure.onClose}
+            >
+                <Drawer.Header>Test</Drawer.Header>
+                <Drawer.Body>Body</Drawer.Body>
+            </Drawer>
             {isLoaded && (
                 <motion.div
                     className="flex h-full flex-col"
@@ -135,7 +150,14 @@ function App() {
                     >
                         <Navbar
                             homeSection=""
-                            endSection={<IoMdInformationCircleOutline />}
+                            endSection={
+                                <span
+                                    onClick={drawerDisclosure.onOpen}
+                                    className="cursor-pointer"
+                                >
+                                    <IoMdInformationCircleOutline />
+                                </span>
+                            }
                             align="left"
                             items={navigationObjects}
                         />
@@ -151,7 +173,7 @@ function App() {
 
                     <motion.div
                         transition={{ duration: 1 }}
-                        className="min-h-max flex-1 px-36 py-16 text-secondary"
+                        className="min-h-max flex-1 px-72 py-16 text-secondary"
                     >
                         <CustomRoute route={navigationObjects} />
                     </motion.div>
